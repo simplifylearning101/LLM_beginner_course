@@ -33,7 +33,7 @@ Let's get started.
 * **Text Manipulation:** Summarization, transformation, and stylistic changes in code.
 * **Chatbots:** Building multi-turn conversational agents with context management.
 * **Robustness:** Handling errors, implementing retries, and managing I/O with files and the web.
-* **Link:** [Week2](week1/README.md)
+* **Link:** [Week2](week2/README.md)
 
 #### **Week 3: Advanced Applications & Agentic Systems**
 * **Chaining:** Orchestrating multiple LLM calls for complex tasks.
