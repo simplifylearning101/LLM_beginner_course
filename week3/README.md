@@ -14,13 +14,13 @@ By the end of this week, you'll be able to build applications where the LLM isn'
 
 | Hour | Link |
 |------|------|
-| 1    | [](01.md) |
-| 2    | [](02.md)|
-| 3    | [](03.md)|
-| 4    | [](04.md) |
-| 5    | [](05.md) |
-| 6    | [](06.md) |
-| 7    | [](07.md) |
-| 8    | [](08.md) |
-| 9    | [](09.md) |
-| 10   | [](10.md) |
+| 1    | [LLM Chaining for Complex Workflows](01.md) |
+| 2    | [LLMs as Reasoning Engines](02.md)|
+| 3    | [Retrieval-Augmented Generation (RAG)](03.md)|
+| 4    | [Building an Advanced Tool-Using Agent](04.md) |
+| 5    | [Building a RAG-Powered Chatbot](05.md) |
+| 6    | [Advanced Agentic Concepts](06.md) |
+| 7    | [Fine-Tuning vs. RAG (A Deeper Dive)](07.md) |
+| 8    | [Project: Building a Multi-Step, RAG-Powered Agent](08.md) |
+| 9    | [Optimizing LLM Applications: Cost and Latency](09.md) |
+| 10   | [Final Project Planning & Review of Week 3](10.md) |
