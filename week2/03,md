@@ -1,0 +1,245 @@
+Excellent progress\! We're really getting into the core of applied LLMs now. For **Week 2: Hour 3**, we'll build directly on your understanding of API calls by introducing fundamental prompt engineering techniques **in code**. This means we'll take the conceptual strategies from Week 1 (like clarity, context, and constraints) and learn how to implement them effectively using Python.
+
+-----
+
+### **Week 2: Hour 3 - Core Prompt Engineering in Code: Instructions, Context & Examples**
+
+#### **30% Theory: Engineering Your Prompts Programmatically**
+
+  * **Objective:** To understand how the principles of effective prompting translate directly into programmatic instruction, and to learn techniques for providing clear directives, relevant context, and few-shot examples within your code.
+
+  * **From Manual to Programmatic Prompting:**
+
+      * In Week 1, you learned the *art* of prompting by typing. Now, we're learning the *science* of prompting by coding.
+      * The goal is to make your prompts **reproducible, consistent, and dynamic** within your applications.
+
+  * **Key Programmatic Prompting Techniques:**
+
+    1.  **Clear Instructions:**
+
+          * **What it is:** Explicitly telling the LLM what to do.
+          * **In code:** Using clear, imperative verbs in your `user` or `system` messages. Breaking down complex tasks into smaller, sequential instructions.
+          * **Example:** Instead of "Talk about X," use "Summarize X in three sentences."
+
+    2.  **Providing Context:**
+
+          * **What it is:** Giving the LLM all the necessary background information it needs to respond accurately and relevantly.
+          * **In code:** Dynamically inserting external data (e.g., a user's query, content of a document, database results) into your prompt string. Using delimiters (like `"""` or `<data>`) to clearly separate your instructions from the context data.
+          * **Example:** `"Summarize the following article:\n\n---\n{article_text}\n---"`
+
+    3.  **Few-Shot Learning (with Examples):**
+
+          * **What it is:** Showing the LLM examples of desired input/output pairs. LLMs are excellent at pattern recognition, so a few examples can dramatically improve performance, especially for specific tasks or formats.
+          * **In code:** Adding previous `user` and `assistant` turns to your `messages` list to demonstrate the desired behavior before asking for the actual task.
+          * **Example:**
+              * `{"role": "user", "content": "Translate 'Hello' to Spanish."}`
+              * `{"role": "assistant", "content": "Hola"}`
+              * `{"role": "user", "content": "Translate 'Goodbye' to French."}` (This is your actual query)
+
+  * **Best Practices for Programmatic Prompts:**
+
+      * **Be Specific and Detailed:** Ambiguity is the enemy of consistent LLM output.
+      * **Use Delimiters:** Clearly mark sections of your prompt, especially when injecting dynamic data.
+      * **Specify Output Format:** Always tell the LLM how you want the response (JSON, bullet points, 3 sentences, etc.).
+      * **Iterate and Test:** Just like debugging code, you'll constantly refine your prompts.
+
+#### **70% Hands-on Session: Building Prompts with Python Variables & Examples**
+
+  * **Objective:** To write Python code that constructs dynamic prompts using variables, applies delimiters, and implements few-shot examples to guide the LLM's behavior. We'll continue with your chosen provider.
+
+  * **Step-by-Step Instructions:**
+
+    1.  **Preparation (5 minutes):**
+
+          * Open VS Code in your `applied_llm_course` folder.
+          * Create a new file named `week2_hour3_prompt_engineering.py`.
+          * Ensure your environment variable for your chosen LLM provider's API key is set in your VS Code terminal.
+
+    2.  **Basic Setup (10 minutes):**
+
+          * Copy the boilerplate for your chosen provider (import statements, API key retrieval, client initialization) into `week2_hour3_prompt_engineering.py`.
+
+    3.  **Task 1: Dynamic Instructions & Context with Delimiters (15 minutes):**
+
+          * **Goal:** Create a prompt that dynamically includes context (a user-provided topic) and uses delimiters for clarity.
+
+          * **Modify `week2_hour3_prompt_engineering.py` (for your chosen provider):**
+
+            ```python
+            # ... (your existing setup code for your chosen provider) ...
+
+            # Dynamic content from a user or another part of your application
+            topic = "renewable energy sources"
+            output_format = "a bulleted list"
+            target_audience = "high school students"
+
+            # Construct the prompt using f-strings for dynamic content
+            instructions = f"""
+            Your task is to explain the following topic to {target_audience}.
+            Present the explanation as {output_format} with 3 key points.
+            """
+
+            context_data = f"""
+            ---
+            Topic: {topic}
+            ---
+            """
+
+            full_prompt = instructions + context_data
+
+            # Define messages list for chat completions
+            messages = []
+            if 'OpenAI' in globals() or 'Anthropic' in globals(): # System message for OpenAI/Anthropic
+                messages.append({"role": "system", "content": "You are a helpful and concise educator."})
+            messages.append({"role": "user", "content": full_prompt})
+
+            print(f"Sending prompt to LLM:\n{full_prompt}")
+
+            try:
+                # Make the API call based on your provider
+                # Replace with your specific client.chat.completions.create or model.generate_content or client.messages.create
+                if 'OpenAI' in globals():
+                    response = client.chat.completions.create(
+                        model="gpt-3.5-turbo",
+                        messages=messages,
+                        max_tokens=200,
+                        temperature=0.5
+                    )
+                    llm_output = response.choices[0].message.content
+                elif 'genai' in globals():
+                    # For Gemini, system instructions are often embedded or in generation_config.
+                    # For this example, we assume the persona is part of the first prompt.
+                    response = model.generate_content(
+                        contents=[{"role": "user", "parts": [full_prompt]}],
+                        generation_config=genai.types.GenerationConfig(temperature=0.5, max_output_tokens=200)
+                    )
+                    llm_output = response.text
+                elif 'Anthropic' in globals():
+                    # For Claude 3, system parameter is explicitly used.
+                    message = client.messages.create(
+                        model="claude-3-opus-20240229",
+                        max_tokens=200,
+                        temperature=0.5,
+                        messages=[{"role": "user", "content": full_prompt}], # User content only in messages
+                        system="You are a helpful and concise educator." # System instruction as a separate parameter
+                    )
+                    llm_output = message.content[0].text
+
+                print("\nLLM's Explanation:")
+                print(llm_output)
+
+            except Exception as e:
+                print(f"An error occurred: {e}")
+            ```
+
+          * **Run the script.** Observe how the LLM explains "renewable energy sources" in a bulleted list for high school students.
+
+    4.  **Task 2: Implementing Few-Shot Learning (20 minutes):**
+
+          * **Goal:** Provide an example of desired input/output to guide the LLM to perform a specific data extraction task.
+
+          * **Modify your script (add this as a separate section, or comment out Task 1 and replace):**
+
+            ```python
+            # ... (your existing setup code for your chosen provider) ...
+
+            print("\n--- Few-Shot Learning Example ---")
+
+            # Define the messages list, including the few-shot example
+            # The structure for messages is slightly different for each provider
+            few_shot_messages = []
+
+            # Example 1: User asks, Assistant responds in desired format
+            if 'OpenAI' in globals():
+                few_shot_messages.extend([
+                    {"role": "user", "content": "Extract the product name and price from this text: 'Luxury Smartwatch, only $299.99! Limited stock.'"},
+                    {"role": "assistant", "content": "Product Name: Luxury Smartwatch\nPrice: $299.99"}
+                ])
+            elif 'genai' in globals():
+                few_shot_messages.extend([
+                    {"role": "user", "parts": ["Extract the product name and price from this text: 'Luxury Smartwatch, only $299.99! Limited stock.'"]},
+                    {"role": "model", "parts": ["Product Name: Luxury Smartwatch\nPrice: $299.99"]}
+                ])
+            elif 'Anthropic' in globals():
+                few_shot_messages.extend([
+                    {"role": "user", "content": "Extract the product name and price from this text: 'Luxury Smartwatch, only $299.99! Limited stock.'"},
+                    {"role": "assistant", "content": "Product Name: Luxury Smartwatch\nPrice: $299.99"}
+                ])
+
+
+            # New input for the LLM to process using the learned pattern
+            new_product_text = "Wireless Noise-Cancelling Headphones - incredible sound for just $149.00 today!"
+            if 'OpenAI' in globals():
+                few_shot_messages.append({"role": "user", "content": f"Extract the product name and price from this text: '{new_product_text}'"})
+            elif 'genai' in globals():
+                 few_shot_messages.append({"role": "user", "parts": [f"Extract the product name and price from this text: '{new_product_text}'"]})
+            elif 'Anthropic' in globals():
+                few_shot_messages.append({"role": "user", "content": f"Extract the product name and price from this text: '{new_product_text}'"})
+
+
+            print(f"Sending few-shot prompt to LLM to extract from: '{new_product_text}'")
+
+            try:
+                if 'OpenAI' in globals():
+                    response = client.chat.completions.create(
+                        model="gpt-3.5-turbo",
+                        messages=few_shot_messages,
+                        max_tokens=50,
+                        temperature=0.0 # Keep temperature low for structured extraction
+                    )
+                    llm_output_few_shot = response.choices[0].message.content
+                elif 'genai' in globals():
+                    response = model.generate_content(
+                        few_shot_messages,
+                        generation_config=genai.types.GenerationConfig(temperature=0.0, max_output_tokens=50)
+                    )
+                    llm_output_few_shot = response.text
+                elif 'Anthropic' in globals():
+                    message = client.messages.create(
+                        model="claude-3-opus-20240229",
+                        max_tokens=50,
+                        temperature=0.0,
+                        messages=few_shot_messages,
+                        # No system prompt here, as the few-shot examples define the behavior
+                    )
+                    llm_output_few_shot = message.content[0].text
+
+
+                print("\nLLM's Extracted Info (Few-Shot):")
+                print(llm_output_few_shot)
+
+            except Exception as e:
+                print(f"An error occurred with few-shot example: {e}")
+            ```
+
+          * **Run the script.** Observe how the LLM extracts the information in the *exact format* provided by the example. This is the power of few-shot learning.
+
+  * **Conclusion of Hands-on Session:**
+
+      * You've successfully implemented core prompt engineering techniques in Python code. You can now build dynamic prompts, leverage delimiters for clarity, and use few-shot examples to guide the LLM's behavior towards desired outcomes and formats. This is crucial for creating robust and predictable LLM applications.
+
+-----
+
+### **Homework for Hour 3**
+
+  * **Exercise 1: Dynamic Summarizer:**
+      * Create a new Python file `week2_hour3_homework_summarizer.py`.
+      * Write a script that asks the user (using `input()`) for a short paragraph of text and a desired summary length (e.g., "1 sentence," "2 sentences").
+      * Construct a prompt that dynamically includes both the user's text (using delimiters) and the desired summary length.
+      * **Your Prompt must instruct the LLM to:** "Summarize the provided text into exactly [user\_defined\_length]. Make sure your summary is clear and concise."
+      * Set `temperature` to a low value (e.g., 0.3) for factual summarization.
+      * Print the LLM's summary.
+      * **Submit:** Your `week2_hour3_homework_summarizer.py` script and an example output from running it with your own input.
+  * **Exercise 2: Few-Shot Sentiment Classifier:**
+      * Modify your script from Task 2 (few-shot example) to classify sentiment (positive, negative, neutral) of a movie review.
+      * Provide two `user`/`assistant` examples: one positive review and its "Positive" classification, and one negative review and its "Negative" classification.
+      * Then, provide a new movie review (your own short sentence) and ask the LLM to classify its sentiment based on your examples.
+      * **Submit:** The relevant code snippet for your `few_shot_messages` and the LLM's classification of your new review.
+  * **Exercise 3: Refine Your Instructions:**
+      * Take your final prompt from the "Comprehensive Prompt" challenge in Week 1, Hour 10.
+      * Imagine you're putting this into code. Identify two specific parts of that prompt where you could improve clarity, add more specific constraints, or use delimiters more effectively.
+      * Rewrite the improved parts of the prompt in text, explaining *why* your changes make it a better programmatic instruction.
+
+-----
+
+You're doing great transitioning into coding with LLMs. Mastering these prompt engineering techniques programmatically is a core skill you'll use constantly. Keep up the excellent work\!
