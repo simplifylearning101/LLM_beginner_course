@@ -7,6 +7,12 @@ My goal is to equip you with the skills to confidently develop, evaluate, and de
 
 Let's get started.
 
+## Note: This course needs basic uderstanding of Python.
+If you are new to Python, please visit my Python fundamentals course before starting this LLM course
+- [Python Fundamentals](https://github.com/simplifylearning101/dsa_with_python/tree/main/Week0%20Python%20Fundamentals)
+- Optional [Python Advanced](https://github.com/simplifylearning101/dsa_with_python/tree/main/Week1%20Advanced%20Python)
+
+
 ### **Applied LLM Course Roadmap**
 
 **Course Philosophy:**
