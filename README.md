@@ -52,7 +52,8 @@ If you are new to Python, please visit my Python fundamentals course before star
 * **Project Kickoff:** Planning a complete, end-to-end application.
 * **Backend:** Setting up a simple web server (e.g., Flask or FastAPI) to serve your LLM logic.
 * **Frontend:** Building a basic user interface (HTML/CSS/JS) to interact with your backend.
-* **Deployment:** Getting your application live on a cloud platform (e.g., Heroku, Google Cloud).
+* **Deployment:** Getting your application live on a cloud platform (e.g., GCP, AWS or Azure).
+* **Link:** [Week4](week4/README.md)
 
 #### **Week 5: Working with Different Data Modalities**
 * **Vision Models:** Integrating and interacting with multimodal LLMs that can process images.
