@@ -1,7 +1,3 @@
-Okay, let's break down Week 1 into a detailed, hour-by-hour agenda, following the 30:70 theory-to-practice approach. We'll start with Hour 1, focusing on a gentle introduction to LLMs and their core function, with a heavy emphasis on direct interaction.
-
------
-
 ### **Week 1: Hour 1 - The "Hello, World\!" of LLMs**
 
 #### **30% Theory: What is an LLM? (The Simple Explanation)**
@@ -69,6 +65,6 @@ Okay, let's break down Week 1 into a detailed, hour-by-hour agenda, following th
   * **Exercise 2: Creative Prompts:** Write three new, original prompts that you can use in your free time to test the LLM's creative abilities. Don't worry about them being "perfect"—the goal is to experiment.
   * **Exercise 3: The Summary:** In your own words, summarize what you learned about LLMs in this first hour. Focus on the core idea of "text prediction" and the importance of what you ask for.
 
-## A AI generated image
+## An AI generated image
 
   ![Do you see](../static/w1h1.png)
