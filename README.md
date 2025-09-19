@@ -35,7 +35,7 @@ Let's get started.
 
 ### **10-Week Course Agenda**
 
-#### **Week 1: The Foundations of LLMs**
+#### **Week 1: The Foundations of LLMs** 
 
 * **Theme:** Demystifying LLMs and getting hands-on with our first interactions.
 * **Learning Goals:**
@@ -181,3 +181,5 @@ Let's get started.
         * Document the project's architecture, implementation details, and evaluation results.
         * Present the final project and its outcomes.
 * **Homework:** The final project is the only homework for this week. It is a chance to showcase their expertise and build a portfolio piece.
+
+Let's jump to [week1](week1/README.md)
