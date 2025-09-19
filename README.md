@@ -40,6 +40,7 @@ Let's get started.
 * **Agents:** The core principles of agentic LLMs.
 * **Tool-Use:** Enabling LLMs to use external tools like search engines, databases, and custom functions.
 * **Retrieval-Augmented Generation (RAG):** Connecting LLMs to a private knowledge base to combat hallucinations and provide up-to-date information.
+* **Link:** [Week3](week3/README.md)
 
 #### **Week 4: Building Your First Full-Stack LLM App**
 * **Project Kickoff:** Planning a complete, end-to-end application.
