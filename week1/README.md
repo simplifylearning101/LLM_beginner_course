@@ -6,14 +6,14 @@ This week sets a strong, practical foundation without overwhelming students with
 
 | Hour | Link |
 |------|------|
-| 1    | [Hour 1](01.md) |
-| 2    |  |
-| 3    |  |
-| 4    |  |
-| 5    |  |
-| 6    |  |
-| 7    |  |
-| 8    |  |
-| 9    |  |
-| 10   |  |
+| 1    | [What is an LLM?](01.md) |
+| 2    | [A Glimpse into LLM History & Advanced Interaction?](02.md)|
+| 3    | [LLM Capabilities, Limitations, and Ethical Considerations](03.md)|
+| 4    | [Understanding the "Prompt" as Your First Line of Code](04.md) |
+| 5    | [Input/Output Patterns and Basic Data Handling](05.md) |
+| 6    | [Conversational Flow & Controlling Creativity](06.md) |
+| 7    | [From Prompt to Application Idea: Use Cases & Design Thinking](07.md) |
+| 8    | [The Iterative Prompting Loop & Prompt Clarity](08.md) |
+| 9    | [Preparing for Reality: Handling Failure & User Experience](09.md) |
+| 10   | [Wrap-up and Preparing for Code](10.md) |
 
