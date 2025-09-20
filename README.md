@@ -61,6 +61,9 @@ If you are new to Python, please visit my Python fundamentals course before star
 * **Project:** Building a simple multimodal application (e.g., an app that describes an uploaded image).
 * **Link:** [Week5](week5/README.md)
 
+#### **BONUS: AI Restaurant Support Executive Project**
+* **Link:** [Week5_Bonus](week5_Bonus/README.md)
+
 #### **Week 6: Fine-Tuning & Custom Model Creation**
 * **Concepts:** When and why to fine-tune an LLM.
 * **Data Preparation:** The process of creating high-quality training data.
