@@ -59,6 +59,7 @@ If you are new to Python, please visit my Python fundamentals course before star
 * **Vision Models:** Integrating and interacting with multimodal LLMs that can process images.
 * **Audio:** Using speech-to-text (STT) and text-to-speech (TTS) APIs to build voice-enabled applications.
 * **Project:** Building a simple multimodal application (e.g., an app that describes an uploaded image).
+* **Link:** [Week5](week5/README.md)
 
 #### **Week 6: Fine-Tuning & Custom Model Creation**
 * **Concepts:** When and why to fine-tune an LLM.
