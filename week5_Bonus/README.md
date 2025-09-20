@@ -14,7 +14,7 @@ This part focus is on the **foundation**. A human-like conversation isn't a sing
     * **System Prompt:** A clear set of instructions for the LLM that defines its role and the information it needs to collect.
     * **Mock Database:** A simple Python dictionary to simulate a booking system's availability. This avoids external dependencies and lets us focus on the core logic.
 * **Hands-on:** You'll write a Python script that asks for one piece of information at a time and updates the state dictionary. The LLM will be prompted to generate the next question.
-* **Link:** [Week5_Bonus](week5_Bonus/part1.md)
+* **Link:** [Part 1](week5_Bonus/part1.md)
 ***
 
 ### Part 2: Advanced Conversation & Tool Integration 🛠️
@@ -27,7 +27,7 @@ Now that the foundation is set, we'll make the bot more intelligent and robust. 
     * **Function Calling:** The bot will need to "check the database" to see if a table is available. We'll use **LLM function calling** to let the model decide when to execute a predefined Python function (`check_availability`).
     * **Dynamic Responses:** If a slot isn't available, the bot shouldn't just say "No." It should suggest alternatives or ask for a different time.
 * **Hands-on:** You'll refactor your Day 1 script to include the `check_availability` function and update the LLM prompt to enable tool use. You'll add logic to handle successful and failed booking attempts. 
-* **Link:** [Week5_Bonus](week5_Bonus/part2.md)
+* **Link:** [Part 2](week5_Bonus/part2.md)
 ***
 
 ### Part 3: The Human Touch & Finalization ✨
@@ -40,4 +40,4 @@ The final day is all about refining the experience. The difference between a goo
     * **Natural Language:** Using the LLM to generate conversational fillers like "Just a moment while I check..." and personalized greetings.
     * **Structured Output:** The final booking confirmation should be clear and well-formatted. You'll use the LLM to generate a final summary and a mock booking ID.
 * **Hands-on:** You'll make the final adjustments to your code. The conversation should now feel like a natural dialogue from start to finish, culminating in a successful booking confirmation. We'll also briefly discuss how to expand this project to a real-world application.
-* **Link:** [Week5_Bonus](week5_Bonus/part3.md)
+* **Link:** [Part 3](week5_Bonus/part3.md)
