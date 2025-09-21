@@ -27,7 +27,7 @@ If you are new to Python, please visit my Python fundamentals course before star
 ### **10-Week Roadmap** 🗺️
 ![alt text](static/intro.png)
 #### **Week 1: Fundamentals of LLMs & The API Landscape**
-* **Concepts:** What are LLMs? How do they work at a high level?
+* **Concepts:** What are Gen AI and LLMs? How do they work at a high level?
 * **API Basics:** Interacting with LLMs via API calls.
 * **Setup:** Setting up your environment and API keys.
 * **Link:** [Week1](week1/README.md)
