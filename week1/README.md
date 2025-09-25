@@ -5,7 +5,11 @@
 This week sets a strong, practical foundation without overwhelming you with code. The focus is on building intuition and confidence. The homework ensures they continue to experiment on their own. Next week, we'll introduce our first actual code and start to build on these fundamentals.
 
 ## You can watch the associated video on YT 
+### Part 1
 [![Video Title](https://img.youtube.com/vi/lqLY_3aHlOE/0.jpg)](https://www.youtube.com/watch?v=lqLY_3aHlOE)
+### Part 2
+[![Video Title](https://img.youtube.com/vi/_SrfGcEKGMg/0.jpg)](https://www.youtube.com/watch?v=_SrfGcEKGMg)
+
 
 | Hour | Link |
 |------|------|
