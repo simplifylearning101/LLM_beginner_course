@@ -3,6 +3,7 @@ Welcome to "Applied LLM"! I'm thrilled to have you here. Over the next 10 weeks,
 
 We'll start with the absolute basics—what an LLM even is—and quickly move into the hands-on, project-based work that will define this course. Forget dense theory and abstract concepts; our focus is on building, experimenting, and solving problems. 
 
+## You can watch associated video below 
 [![Video Title](https://img.youtube.com/vi/8IU-1ijRIiw/0.jpg)](https://www.youtube.com/watch?v=8IU-1ijRIiw)
 
 My goal is to equip you with the skills to confidently develop, evaluate, and deploy your own LLM applications, turning you from a beginner into a skilled practitioner. 
